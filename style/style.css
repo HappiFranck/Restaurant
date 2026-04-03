@@ -8,482 +8,607 @@
   src: url("Pinyon_Script,Source_Sans_Pro/Pinyon_Script/PinyonScript-Regular.ttf");
 }
 
-/* This code is used to create a grid system that will be used to layout the different elements of the page. The grid system will be used to layout the header, the menu, the chef, the recipes, the description, the plan, the localisation and the footer. The grid system is a 2x8 grid with a header, a burger, a crusted chicken, a menu, a chef, a description, a reservation, recipes, a plan, a localisation and a footer. Each of the 8 rows is 675px. */
+:root {
+  --gold: #c89446;
+  --dark: #0f0f10;
+  --dark-soft: #171719;
+  --text: #6f6f6f;
+  --white: #ffffff;
+  --max-width: 1180px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.9fr 1.6fr 1.36fr 0.93fr 0.88fr 1.14fr 0.595fr 0.5fr;
-  gap: 0px 0px;
-
-  grid-template-areas:
-    "header header"
-    "bloc-publicitaire bloc-publicitaire"
-    "menu menu"
-    "chef chef"
-    "reservation reservation"
-    "recipes recipes"
-    "plan-localisation plan-localisation"
-    "footer footer";
-  width: 100%;
-  height: 5400px;
-
-  font-family: "SourceSansPro-Regular", serif, Cambria, Cochin, Georgia, Times,
-    "Times New Roman";
+  margin: 0;
+  font-family: "SourceSansPro-Regular", Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.65;
 }
 
-/* This code sets the background image for the header section of the page. */
-
-.header {
-  grid-area: header;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 1.6fr 1fr 1fr;
-  gap: 0px 0em;
-
-  grid-template-areas:
-    "logo logo . . . lien-a-propos lien-a-propos lien-menu lien-recipes lien-contact lien-reservation lien-reservation"
-    ". . . . . . . . . . . ."
-    ". . . bienvenue bienvenue bienvenue bienvenue bienvenue bienvenue . . ."
-    ". . . . . . . . . . . .";
-
-  justify-items: center;
-  align-items: center;
-
-
-  background-image: linear-gradient(rgba(52, 52, 61, 0.5), rgba(54, 51, 54, 0.29)), url(../img/eggs.jpg);
-
-  background-size: cover;
-  object-fit: fill;
-
+img {
+  max-width: 100%;
+  display: block;
 }
 
-header a {
-  font-size: 1em;
-  color: white;
+a {
   text-decoration: none;
 }
 
-.logo {
-  grid-area: logo;
-  font-size: 1em;
-  color: white;
+.container {
+  width: min(100% - 32px, var(--max-width));
+  margin-inline: auto;
 }
 
-.lien-a-propos {
-  grid-area: lien-a-propos;
-
+.section {
+  padding: 100px 0;
 }
 
-.lien-menu {
-  grid-area: lien-menu;
+.subtitle-script {
+  margin: 0 0 10px;
+  font-family: "PinyonScript", cursive;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  color: var(--gold);
+  line-height: 1;
 }
 
-.lien-recipes {
-  grid-area: lien-recipes;
-}
-
-.lien-contact {
-  grid-area: lien-contact;
-}
-
-.lien-reservation {
-  grid-area: lien-reservation;
-  border: solid 1px rgba(200, 148, 70, 1);
-  border-radius: 2px;
-}
-
-.lien-reservation:hover {
-  background-color: rgba(200, 148, 70, 1);
-  color: white;
-}
-
-.bienvenue {
-  grid-area: bienvenue;
-}
-
-
-
-h1 {
-  font-size: 60px;
-  font-family: "PinyonScript";
+.section-heading {
   text-align: center;
-  color: chocolate;
+  max-width: 760px;
+  margin: 0 auto 48px;
 }
 
-h2 {
-  font-size: 70px;
-  font-family: "SourceSansPro-Regular";
-  text-align: center;
-  color: white;
+.section-heading.light h2,
+.section-heading.light .section-intro {
+  color: var(--white);
 }
 
-h3 {
-  font-size: 24px;
-  font-family: "SourceSansPro-Regular";
-  text-align: center;
-  color: white;
+.section-heading h2 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #1f1f1f;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
 }
 
-/*-----style pour la section:bloc-publicitaire---*/
-.bloc-publicitaire {
-  display: grid;
-  grid-template-columns: 0.90625fr 1.54fr 0.32fr auto 0.90625fr;
-  grid-template-rows: 1.54fr 0.243fr auto 0.38fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". image-burger . description-burger ."
-    ". . . . ."
-    ". description-crusted-chicken . image-crusted-chicken ."
-    ". . . . .";
-  grid-area: bloc-publicitaire;
-}
-
-.image-burger {
-  grid-area: 1/ 2 / 2 / 3;
-
-}
-
-.cadre-image {
-  position: relative;
-  top: -30px;
-  left: -30px;
-  width: 350px;
-  height: 425px;
-  overflow: visible;
-  border: 1px solid rgba(200, 148, 70, 1);
-  z-index: 0;
-  margin-left: 30px;
-}
-
-.image-burger img {
-  margin-left: 30px;
-  margin-top: 30px;
-  z-index: 1;
-}
-
-.description-burger {
-
-  grid-area: 1 / 4 / 2 / 5;
-
-}
-
-
-.see-more {
-  font-family: "Source_Sans_Pro";
-  font-size: 1.5em;
-  color: #c89446;
-  text-decoration: none;
-}
-
-.see-more::after {
-  content: " >";
-}
-
-.description-crusted-chicken {
-  grid-area: description-crusted-chicken;
-  grid-column: 2/3;
-  grid-row: 3;
-
-}
-
-.image-crusted-chicken {
-  justify-self: end;
-  grid-area: image-crusted-chicken;
-  grid-column: 4/5;
-  grid-row: 3;
-}
-
-.image-crusted-chicken img {
-
-  margin-top: 30px;
-  margin-left: -30px;
-
-  z-index: 1;
-}
-
-.cadre-image-chicken {
-  width: 350px;
-  height: 425px;
-  border: 2px solid #C89446;
-  z-index: 0;
-}
-
-
-
-/*-----style pour la section:menu---*/
-.menu {
-  grid-area: menu;
-  display: grid;
-  grid-template-columns: 0.67fr 1.25fr 0.49fr 1.25fr 0.67fr;
-  grid-template-rows: 0.27fr 0.31fr;
-
-
-  grid-template-areas:
-    "presentation-menu presentation-menu presentation-menu presentation-menu presentation-menu"
-    "aliments-menu aliments-menu aliments-menu aliments-menu aliments-menu";
-
-  margin-left: 8vw;
-  margin-right: 9.6vw;
-  border: 2px solid black;
-}
-
-.presentation-menu {
-  grid-column: 2/5;
-  grid-row: 1;
-  grid-area: presentation-menu;
-}
-
-.aliments-menu {
-  font-size: 2em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "eggs porc chicken fish vegan";
-  justify-items: center;
-  align-items: center;
-  grid-area: aliments-menu;
-}
-
-.aliments-menu a {
-  text-decoration: none;
-  color: black;
-}
-
-.aliments-menu a:hover {
-  color: #C89446;
-}
-
-.vegan {
-  grid-area: vegan;
-  grid-column: 5;
-  grid-row: 1;
-}
-
-.fish {
-  grid-area: fish;
-  grid-column: 4;
-  grid-row: 1;
-}
-
-.chicken {
-  grid-area: chicken;
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.porc {
-  grid-area: porc;
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.eggs {
-  grid-area: eggs;
-  grid-column: 1;
-  grid-row: 1;
-}
-
-
-
-.crusted-chicken-1{
- display:flex;
-  flex-direction: row; 
-  
-
-  
-}
-
- .image-crusted-chicken-1 {
-
-
-}
-
-.image-crusted-chicken-1 img {
-
-}
-
-.description-crusted-chicken-1 {
-
-  overflow: hidden;
-  box-sizing: border-box;
-  
-
-}
-.bobun-light-odd{
-  display: flex;
-  flex-direction: row-reverse;
-  
-  
-
-
-}
-
-.image-bobun-light-odd {
-  grid-area: image-bobun-light-odd;
-  
- 
-}
-
-.description-bobun-light-odd {
-  grid-area: description-bobun-light-odd;
-}
-
-.image-crusted-chicken-2 {
-  grid-area: image-crusted-chicken-2;
- 
-
-
-
-}
-
-.description-crusted-chicken-2 {
-
-
-}
-
-.description-spicy-egg-paella {
-  grid-area: description-spicy-egg-paella;
-}
-
-.image-spicy-egg-paella {
-  grid-area: image-spicy-egg-paella;
-}
-
-
-
-
-
-
-/*-----style pour la section:chef---*/
-.chef {
-  grid-area: chef;
-
-
-  display: grid;
-  grid-template-columns: 0.4fr 2.6fr 0.2fr 1.3fr 0.5fr;
-  grid-template-rows: 0.6fr 1.9fr 0.4fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . . . ."
-    ". description-chef . image-chef ."
-    ". . . . .";
-}
-
-.description-chef {
-  grid-area: description-chef;
-}
-
-.image-chef {
-  grid-area: image-chef;
-
-}
-
-/* ----------------------- Section pour les reservation ---------- */
-
-.reservation {
-  grid-area: reservation;
-  border: 2px solid black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.7fr 1.3fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . . . ."
-    ". texte texte texte ."
-    ". col2 col3 col4 ."
-    ". . btn . .";
-
-}
-
-.texte {
-  justify-self: center;
-  align-self: center;
-  grid-area: texte;
-
-}
-.form{
-
-}
-
-.col2 input[type='text']{
-
-
-}
-
-.col3 {
-  align-self: center;
-  grid-area: col3;
-
-}
-
-.col4 {
-  align-self: center;
-  grid-area: col4;
-
+.section-intro {
+  margin: 0 auto;
+  font-size: 1rem;
 }
 
 .btn {
-  align-self: center;
-  grid-area: btn;
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 2px;
+  transition: 0.3s ease;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
 }
 
-.recipes {
-  grid-area: recipes;
+.btn-outline {
+  color: var(--white);
+  border: 1px solid var(--gold);
 }
 
-.plan-localisation {
-  grid-area: plan-localisation;
+.btn-outline:hover {
+  background: var(--gold);
 }
 
-/* Section footer */
-.footer {
+.btn-solid {
+  border: 0;
+  background: var(--gold);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn-solid:hover {
+  filter: brightness(1.08);
+}
+
+.link-more {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.link-more::after {
+  content: " >";
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(10, 10, 10, 0.58), rgba(10, 10, 10, 0.58)),
+    url("../img/eggs.jpg") center/cover no-repeat;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  position: relative;
+}
+
+.logo {
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.burger {
+  display: none;
+  width: 32px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+}
+
+.hero-content {
+  flex: 1;
   display: grid;
-  grid-template-columns: 0.8fr 2.17fr 0.3fr 1.23fr 0.3fr 1.41fr 0.8fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". footer-c2-l1 . footer-c4-l1 . footer-c6-l1 ."
-    ". footer-c2-l2 . footer-c4-l2 . footer-c6-l2 ."
-    ". footer-c2-l3 . . . . .";
-  grid-area: footer;
-  background-color: #383838;
-  color: white;
+  place-items: center;
+  text-align: center;
+  padding: 40px 0 80px;
 }
 
-.footer-c2-l1 {
-  align-self: center;
-  grid-area: footer-c2-l1;
+.hero-content h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  color: var(--white);
+  letter-spacing: 0.12em;
 }
 
-.footer-c2-l2 {
-  grid-area: footer-c2-l2;
+.hero-subtitle {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  letter-spacing: 0.28em;
 }
 
-.footer-c2-l3 {
-  align-self: center;
-  grid-area: footer-c2-l3;
+/* STORY */
+.story {
+  display: grid;
+  gap: 90px;
 }
 
-.footer-c4-l1 {
-  align-self: center;
-  grid-area: footer-c4-l1;
+.story-block {
+  display: grid;
+  grid-template-columns: minmax(280px, 430px) 1fr;
+  gap: 70px;
+  align-items: center;
 }
 
-.footer-c4-l2 {
-  grid-area: footer-c4-l2;
+.story-block.reverse {
+  grid-template-columns: 1fr minmax(280px, 430px);
 }
 
-.footer-c6-l1 {
-  align-self: center;
-  grid-area: footer-c6-l1;
+.story-block.reverse .framed-image {
+  order: 2;
 }
 
-.footer-c6-l2 {
-  grid-area: footer-c6-l2;
-
+.story-block.reverse .story-text {
+  order: 1;
 }
 
+.framed-image {
+  position: relative;
+  padding: 28px 0 0 28px;
+}
+
+.framed-image::before {
+  content: "";
+  position: absolute;
+  inset: 0 28px 28px 0;
+  border: 2px solid var(--gold);
+}
+
+.framed-image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.story-text h2,
+.chef-text h2,
+.map-card h3,
+.menu-card h3,
+.recipe-content h3,
+.footer h4 {
+  color: #1f1f1f;
+}
+
+.story-text h2,
+.chef-text h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.story-text p:last-of-type,
+.chef-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* MENU */
+.menu-section {
+  background: #111;
+}
+
+.menu-section .section-heading h2,
+.menu-section .section-heading .section-intro {
+  color: #fff;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+  margin-bottom: 42px;
+}
+
+.menu-tabs a {
+  color: rgba(255, 255, 255, 0.76);
+  letter-spacing: 0.08em;
+}
+
+.menu-tabs a.active,
+.menu-tabs a:hover {
+  color: var(--gold);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.menu-card {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  min-height: 180px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px;
+}
+
+.menu-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.price {
+  color: var(--gold);
+  font-size: 2rem;
+  font-family: "PinyonScript", cursive;
+  white-space: nowrap;
+  align-self: end;
+}
+
+/* CHEF */
+.chef-section {
+  display: grid;
+  grid-template-columns: 1.2fr minmax(260px, 420px);
+  gap: 50px;
+  align-items: center;
+}
+
+.chef-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* RESERVATION */
+.reservation-section {
+  background:
+    linear-gradient(rgba(10, 10, 10, 0.66), rgba(10, 10, 10, 0.66)),
+    url("../img/eggs.jpg") center/cover no-repeat;
+  padding: 0;
+}
+
+.reservation-overlay {
+  padding: 100px 0;
+}
+
+.reservation-inner {
+  text-align: center;
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr auto;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form button {
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  outline: none;
+}
+
+.reservation-form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.reservation-form select option {
+  color: #111;
+}
+
+.reservation-form button {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* RECIPES */
+.recipes-list {
+  display: grid;
+  gap: 24px;
+}
+
+.recipe-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.recipe-date {
+  text-align: center;
+  color: #1f1f1f;
+}
+
+.recipe-date span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.recipe-date small {
+  letter-spacing: 0.16em;
+  color: var(--text);
+}
+
+.recipe-content h3 {
+  margin: 0 0 8px;
+}
+
+.recipe-content p {
+  margin: 0;
+}
+
+.recipes-link-wrap {
+  text-align: right;
+  margin-top: 26px;
+}
+
+/* MAP */
+.map-section {
+  min-height: 340px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    url("../img/eggs.jpg") center/cover no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+.map-overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.map-card {
+  background: rgba(17, 17, 17, 0.9);
+  color: #fff;
+  padding: 28px 34px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 360px;
+}
+
+.map-card h3 {
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+/* FOOTER */
+.footer {
+  background: #2c2c2c;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 70px 0 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 36px;
+}
+
+.footer h4 {
+  margin: 0 0 18px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.footer-bottom {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.92rem;
+}
+
+/* TABLET */
+@media (max-width: 991px) {
+  .story-block,
+  .story-block.reverse,
+  .chef-section,
+  .menu-grid,
+  .footer-grid,
+  .reservation-form {
+    grid-template-columns: 1fr;
+  }
+
+  .story-block.reverse .framed-image,
+  .story-block.reverse .story-text {
+    order: initial;
+  }
+
+  .menu-card {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .reservation-form button {
+    width: 100%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .burger {
+    display: block;
+    z-index: 20;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    background: rgba(15, 15, 16, 0.98);
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 88vh;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 0.12em;
+  }
+
+  .story {
+    gap: 56px;
+  }
+
+  .story-block {
+    gap: 34px;
+  }
+
+  .framed-image img {
+    height: 340px;
+  }
+
+  .menu-card {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card img {
+    height: 220px;
+  }
+
+  .menu-card-content {
+    flex-direction: column;
+  }
+
+  .price {
+    align-self: flex-start;
+  }
+
+  .recipe-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .recipe-date {
+    text-align: left;
+  }
+
+  .recipes-link-wrap {
+    text-align: left;
+  }
+
+  .map-card {
+    width: 100%;
+  }
+}

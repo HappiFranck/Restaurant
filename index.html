@@ -1,213 +1,301 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/bootstrap.css" />
-    <link rel="stylesheet" href="style/style.css" />
-    
-    <title>Restaurant</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Fiasco</title>
+  <link rel="stylesheet" href="style/style.css" />
 </head>
-
 <body>
+  <header class="hero" id="home">
+    <nav class="navbar container">
+      <a href="#home" class="logo">THE FIASCO</a>
 
-    <header class="header">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-        <div class="logo"><a href="">THE FIASCO</a></div>
+      <div class="nav-links">
+        <a href="#about">ABOUT FIASCO’S</a>
+        <a href="#menu">MENU</a>
+        <a href="#recipes">RECIPES</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#reservation" class="btn btn-outline">MAKE RESERVATION</a>
+      </div>
+    </nav>
 
-        <div class="lien-a-propos"><a href="">ABOUT FIASCO’S</a></div>
-        <div class="lien-menu"><a href=""> MENU</a></div>
-        <div class="lien-recipes"><a href="">RECIPES</a></div>
-        <div class="lien-contact"><a href="">CONTACT</a></div>
-        <div class="lien-reservation"><a href="">MAKE RESERVATION</a></div>
+    <div class="hero-content container">
+      <p class="subtitle-script">Welcome</p>
+      <h1>THE FIASCO</h1>
+      <p class="hero-subtitle">MEDITERRANEAN SPECIALITIES</p>
+    </div>
+  </header>
 
-
-        <div class="bienvenue">
-            <h1>Welcome</h1>
-            <h2>THE FIASCO</h2>
-            <h3>MEDITERRANEAN SPECIALITIES</h3>
+  <main>
+    <section class="story section container" id="about">
+      <article class="story-block">
+        <div class="framed-image">
+          <img src="img/burger.jpg" alt="Burger gourmand" />
         </div>
-    </header>
-    <section class="bloc-publicitaire">
+        <div class="story-text">
+          <p class="subtitle-script">Discover</p>
+          <h2>OUR GASTRONOMY</h2>
+          <p>
+            Attending a trade show can be a very effective method of promoting
+            your company and its products. And one of the most effective ways to
+            optimize your trade show display and increase traffic to your booth
+            is through the use of banner stands.
+          </p>
+          <a href="#menu" class="link-more">See more</a>
+        </div>
+      </article>
 
-        <div class="image-burger">
-            <div class="cadre-image">
-                <img src="img/burger.jpg" alt="image-burger">
+      <article class="story-block reverse">
+        <div class="framed-image">
+          <img src="img/crusted-chicken.jpg" alt="Plat de poulet croustillant" />
+        </div>
+        <div class="story-text">
+          <p class="subtitle-script">Tasteful</p>
+          <h2>RECIPES MADE WITH LOVE</h2>
+          <p>
+            Classified advertising is a form of advertising that is particularly
+            common in newspapers and other periodicals. A classified is usually
+            textually based and can consist of as little as the type of item
+            being sold and a contact number to call for more information.
+          </p>
+          <a href="#recipes" class="link-more">See more</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <p class="subtitle-script">Menu</p>
+          <h2>CERTIFIED BIO</h2>
+          <p class="section-intro">
+            Classified advertising is a form of advertising that is particularly
+            common in newspapers and other periodicals.
+          </p>
+        </div>
+
+        <div class="menu-tabs">
+          <a href="#">EGGS</a>
+          <a href="#">PORC</a>
+          <a href="#" class="active">CHICKEN</a>
+          <a href="#">FISH</a>
+          <a href="#">VEGAN</a>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img src="img/crusted-chicken-square.jpg" alt="Amazing Crusted Chicken" />
+            <div class="menu-card-content">
+              <div>
+                <h3>Amazing Crusted Chicken</h3>
+                <p>
+                  Beryl Cook is one of Britain’s most talented and amusing
+                  artists. Her pictures feature people of all shapes and sizes.
+                </p>
+              </div>
+              <span class="price">$20</span>
             </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="img/bobun-light-square.jpg" alt="BoBun Light Odd" />
+            <div class="menu-card-content">
+              <div>
+                <h3>BoBun Light Odd</h3>
+                <p>
+                  A fresh, colorful bowl packed with herbs, crunchy vegetables
+                  and balanced flavors for a light lunch.
+                </p>
+              </div>
+              <span class="price">$18</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="img/crusted-chicken-square.jpg" alt="Amazing Crusted Chicken Deluxe" />
+            <div class="menu-card-content">
+              <div>
+                <h3>Amazing Crusted Chicken Deluxe</h3>
+                <p>
+                  A signature recipe with crispy coating, tender meat and a rich
+                  homemade sauce.
+                </p>
+              </div>
+              <span class="price">$22</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="img/bobun-light-square.jpg" alt="Spicy Egg Paella" />
+            <div class="menu-card-content">
+              <div>
+                <h3>Spicy Egg Paella</h3>
+                <p>
+                  A Mediterranean-inspired plate with spices, texture and a warm
+                  homemade touch.
+                </p>
+              </div>
+              <span class="price">$20</span>
+            </div>
+          </article>
         </div>
-        <div class="description-burger">
-            <span style="font-family: PinyonScript;font-size:2em;color:#C89446 ;">
-                Discover
-            </span> <br>
-            <span style="font-size:2em;color:#383838 ;">OUR GASTRONOMY</span><br>
-            <span style="font-size:1em;color:#6F6F6F ;">Attending a trade
-                show can be a very effective method of<br>promoting your company and its products. And one of the
-                most<br>
-                effective ways to optimize your trade show display and increase<br> traffic to your booth is through the
-                use of banner stands.
-            </span>
-            <div><a class="see-more" href="">see more </a></div>
-
-        </div>
-
-
-
-        <div class="description-crusted-chicken">
-            <span style="font-size:2em;color:rgb(200, 148, 70, 1);font-family: PinyonScript;">Tasteful</span><br>
-            <span style="font-size:2em; font-family: SourceSansPro-Regular;">RECIPES MADE WITH LOVE</span><br>
-            Classified advertising is a form of advertising that is particularly common in newspapers and other
-            periodicals.
-            A classified is usually textually based and can consist of as little as the type of item being sold, and a
-            contact
-            number to call for more information <br>
-            <a href="" class="see-more">See more</a>
-        </div>
-        <div class="image-crusted-chicken">
-            <div class="cadre-image-chicken"><img src="img/crusted-chicken.jpg"></div>
-        </div>
-
-
-
-    </section>
-    <section class="menu">
-        <article class="presentation-menu">
-            <h1><span style="color:rgb(200, 148, 70, 1);font-family: PinyonScript;">Menu</span></h1>
-            <h2><span style="color:#383838;font-family:SourceSansPro-Regular;">CERTIFIED BIO</span></h2>
-            <p style="font-size:2em;"> Classified advertising is a form of advertising that is particularly common in
-                newspapers and other periodicals.
-                A classified is usually textually based and can consist of as little as the type of item being sold, and
-                a contact
-                number to call for more information</p>
-        </article>
-        <article class="aliments-menu">
-            <div class="eggs"> <a href="">eggs</a></div>
-            <div class="porc"><a href="">porc</a></div>
-            <div class="chicken"><a href="">chicken</a></div>
-            <div class="fish"><a href="">fish</a></div>
-            <div class="vegan"><a href="">vegan</a></div>
-        </article>
-        
-            <article class="crusted-chicken-1">
-                <div class="image-crusted-chicken-1"><img alt="img" src="img/crusted-chicken-square.jpg"></div>
-                <div class="description-crusted-chicken-1">
-                    <h3 style="color: black;">Amazing Crusted Chicken</h3>
-                    Beryl Cook is one of Britain’s most talented and <br>amusing artists .Beryl’s
-                    pictures feature women of <br>all shapes and sizes enjoying themselves
-                </div>
-            </article>
-
-            <article class="bobun-light-odd">
-                <div class="image-bobun-light-odd"><img alt="img" src="img/bobun-light-square.jpg"></div>
-                <div class="description-bobun-light-odd">
-                    <h3 style="color: black;">BoBun Light Odd</h3>Beryl Cook is one of Britain’s most talented and<br>
-                    amusing artists .Beryl’s pictures feature women of <br>
-                    all shapes and sizes enjoying themselves
-                </div>
-            </article>
-            <article class="crusted-chicken-2">
-                <div class="image-crusted-chicken-2"></div>
-                <div class="description-crusted-chicken-2"></div>
-            </article>
-            <article class="spicy-egg-paella">
-                <div class="image-spicy-egg-paella"></div>
-                <div class="description-spicy-egg-paella"></div>
-            </article>
-        
+      </div>
     </section>
 
-    <section class="chef">
-        <article class="description-chef">
-            <h1><span style="color:rgb(200, 148, 70, 1);font-family: PinyonScript;">Chef</span></h1>
-            <h3><span style="color:black; font-size:28px;font-style:  SourceSansPro-Regular;">MEET OUR EXECUTIVE CHEF,
-                    CHRISTIAN JACOB</span></h3>
-            <p>If you are considering purchasing a new grill, or barbecue, you will be faced with a multitude of options
-                to choose between. However, there is one choice which you will need to make fairly quickly in your quest
-                for the perfect grill for you. That decision is whether to buy a charcoal or gas grill.</p>
-            <p>Wow I have a hankering for some really good grill roasted chicken, the melt in your mouth variety with
-                some fresh homemade salsa slathered right on top.</p>
-            <a href="" class="see-more"><br>See the cooks</a>
+    <section class="chef-section section container">
+      <div class="chef-text">
+        <p class="subtitle-script">Chef</p>
+        <h2>MEET OUR EXECUTIVE CHEF, CHRISTIAN JACOB</h2>
+        <p>
+          If you are considering purchasing a new grill or barbecue, you will be
+          faced with a multitude of options to choose between. However, there is
+          one choice which you will need to make fairly quickly in your quest
+          for the perfect grill.
+        </p>
+        <p>
+          Wow, I have a hankering for some really good grill roasted chicken,
+          the melt-in-your-mouth variety with some fresh homemade salsa
+          slathered right on top.
+        </p>
+        <a href="#" class="link-more">See the cooks</a>
+      </div>
 
-        </article>
-        <article class="image-chef"><img src="img/Bitmap.png">
-
-        </article>
-        <article class="img-chef">
-
-        </article>
-
-    </section>
-    <section class="reservation">
-        <article class="texte">
-            <h2 style="color:rgb(200, 148, 70, 1);font-family: PinyonScript;">Reservation</h2>
-            <h2 style="color:black; font-size:28px;font-style:  SourceSansPro-Regular;">MAKE RESERVATION</h2>
-        </article>
-        <article class="reserver">
-            <form method="post" action="" class="form">
-
-                <div class="col2"> <input type="text" name="nom" placeholder="FULL NAME (FOCUS)"></div>
-                <div class="col3">
-                    <select name="pets">
-                        <option value="">For 2 PERSONS</option>
-                        <option value="dog">For 3 PERSONS</option>
-                        <option value="dog">For 4 PERSONS</option>
-                    </select>
-                </div>
-                <input type="datetime-local" id="meeting-time" name="heure-reservation" value="2023-04-25T19:30"
-                    min="2023-01-07T00:00" max="2023-12-14T00:00">
-                <input type="submit" class="col4" value="RESERVER TABLE">
-
-            </form>
-
-        </article>
+      <div class="chef-image">
+        <img src="img/Bitmap.png" alt="Chef Christian Jacob" />
+      </div>
     </section>
 
-    <section class="recipes">
-        <div class="description-recipes">
+    <section class="reservation-section section" id="reservation">
+      <div class="reservation-overlay">
+        <div class="container reservation-inner">
+          <div class="section-heading light">
+            <p class="subtitle-script">Reservation</p>
+            <h2>MAKE RESERVATION</h2>
+            <p class="section-intro">
+              Book your table in a few clicks and enjoy an unforgettable dining experience.
+            </p>
+          </div>
 
+          <form class="reservation-form">
+            <input type="text" name="nom" placeholder="FULL NAME" />
+            <select name="guests">
+              <option value="">FOR 2 PERSONS</option>
+              <option value="3">FOR 3 PERSONS</option>
+              <option value="4">FOR 4 PERSONS</option>
+              <option value="5">FOR 5+ PERSONS</option>
+            </select>
+            <input type="datetime-local" name="heure-reservation" />
+            <button type="submit" class="btn btn-solid">RESERVE TABLE</button>
+          </form>
         </div>
-        <div class="29">
-
-        </div>
-        <div class="30">
-
-        </div>
-        <div class="31">
-
-        </div>
-        <div class="lien-blog">
-
-        </div>
-
+      </div>
     </section>
-    <section class="plan-localisation">
 
+    <section class="recipes-section section container" id="recipes">
+      <div class="section-heading">
+        <p class="subtitle-script">Recipes</p>
+        <h2>WE SHARE OUR RECIPES WITH YOU</h2>
+        <p class="section-intro">
+          Discover our latest stories, inspirations and cooking tips.
+        </p>
+      </div>
+
+      <div class="recipes-list">
+        <article class="recipe-item">
+          <div class="recipe-date">
+            <span>29</span>
+            <small>SEP</small>
+          </div>
+          <div class="recipe-content">
+            <h3>Chicp pea and peared salad</h3>
+            <p>
+              A fresh and colorful recipe with crunchy textures and balanced
+              seasoning.
+            </p>
+          </div>
+        </article>
+
+        <article class="recipe-item">
+          <div class="recipe-date">
+            <span>30</span>
+            <small>SEP</small>
+          </div>
+          <div class="recipe-content">
+            <h3>Spicy herb roasted vegetables</h3>
+            <p>
+              Simple ingredients, bold flavors and a perfect side dish for every table.
+            </p>
+          </div>
+        </article>
+
+        <article class="recipe-item">
+          <div class="recipe-date">
+            <span>31</span>
+            <small>SEP</small>
+          </div>
+          <div class="recipe-content">
+            <h3>Homemade Mediterranean sauce</h3>
+            <p>
+              Rich, fragrant and easy to pair with grilled meats, fish or vegetables.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="recipes-link-wrap">
+        <a href="#" class="link-more">Go to our blog</a>
+      </div>
     </section>
-    <footer class="footer">
-        <div class="footer-c2-l1">
-            <h4 style="color:rgb(200, 148, 70, 1);font-family: SourceSansPro-Regular;"> THE FIASCO
-            </h4>
 
+    <section class="map-section" id="contact">
+      <div class="map-overlay">
+        <div class="map-card">
+          <p class="subtitle-script">Location</p>
+          <h3>THE FIASCO</h3>
+          <p>1234 Altschul, New York, NY 10027-0000</p>
+          <p>+1 987 654 3210</p>
         </div>
-        <div class="footer-c2-l2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.</div>
-        <div class="footer-c2-l3"> 2018 THE FIASCO. All rights reserved.</div>
-        <div class="footer-c4-l1">
-            <h4 style="color:rgb(200, 148, 70, 1);font-family: SourceSansPro-Regular;">
-                CONTACT INFO</h4>
-        </div>
-        <div class="footer-c4-l2">1234 Altschul, New York, NY 10027-0000<br>
-            +1 987 654 3210<br>
-            contact@thefiasco.com</div>
-        <div class="footer-c6-l1">
-            <h4 style="color:rgb(200, 148, 70, 1);font-family:SourceSansPro-Regular;">
-                OPENINGS HOURS</h4>
-        </div>
-        <div class="footer-c6-l2">Monday to Friday | 10:00 AM - 11:00 PM</div>
-    </footer>
-    <script src="script/bootstrap.js"></script>
-    <script src="script/script.js"></script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>THE FIASCO</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+          dolorum, sint corporis nostrum.
+        </p>
+      </div>
+
+      <div>
+        <h4>CONTACT INFO</h4>
+        <p>
+          1234 Altschul, New York, NY 10027-0000<br />
+          +1 987 654 3210<br />
+          contact@thefiasco.com
+        </p>
+      </div>
+
+      <div>
+        <h4>OPENING HOURS</h4>
+        <p>Monday to Friday | 10:00 AM - 11:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>2018 THE FIASCO. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
-
 </html>
